@@ -1,11 +1,15 @@
+import { StyleSheet, Text, View } from "react-native";
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import AppNavigator from './src/navigation/AppNavigator';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <View style={styles.header}>
+        <Text style={styles.headerText}>Movies App</Text>
+      </View>
+      <AppNavigator />
+      <StatusBar style="dark" />  
     </View>
   );
 }
@@ -13,8 +17,19 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#f5f5f5", 
+  },
+  header: {
+    height: 110,
+    backgroundColor: "rgb(163, 216, 244)", 
+    justifyContent: "center",
+    alignItems: "center",
+    paddingTop: 10,
+  },
+  headerText: {
+    color: "#fff", 
+    paddingTop: 50,
+    fontSize: 24, 
+    fontWeight: "bold",
   },
 });
